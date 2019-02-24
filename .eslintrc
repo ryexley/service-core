@@ -1,0 +1,14 @@
+{
+  "extends": "eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 10
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "semi": ["error", "never"],
+    "require-jsdoc": ["off"],
+    "lines-around-comment": ["off"],
+    "node/no-unsupported-features/es-syntax": ["off"]
+  }
+}

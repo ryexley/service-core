@@ -1,0 +1,10 @@
+{
+  "name": "micro-service",
+  "host": {
+    "port": 7000,
+    "name": "localhost"
+  },
+  "logging": {
+    "level": "debug"
+  }
+}

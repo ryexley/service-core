@@ -1,0 +1,7 @@
+{
+  "name": "example-service",
+  "host": {
+    "port": 7004,
+    "name": "localhost"
+  }
+}
