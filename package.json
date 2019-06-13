@@ -3,12 +3,16 @@
   "version": "0.0.1",
   "description": "Microservice core",
   "main": "dist/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "server": "NODE_ENV=dev nodemon -L --exec babel-node ./src/index.js | bunyan",
     "lint": "eslint ./src",
     "lint:fix": "yarn run lint --fix",
     "build": "rm -rf ./dist && babel ./src --out-dir ./dist",
     "version": "standard-version --sign",
+    "prepublish": "yarn run build",
     "publish": "npm publish --access public",
     "serve-sample": "NODE_CONFIG_DIR=./example/config NODE_ENV=dev nodemon -L --exec babel-node ./example/src/index.js | bunyan"
   },
