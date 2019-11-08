@@ -5,12 +5,17 @@ import { serverRoutes } from "../routes"
 import { expressFactory } from "../express"
 import packageConfig from "../../package.json"
 
-export function api({ config: serviceConfig, routes: serviceRoutes }) {
+export function api({
+  config: serviceConfig,
+  routes: serviceRoutes,
+  deps: serviceDeps
+}) {
   const { name, host: { port, name: hostName }, logging } = config
   const log = logFactory({ name, ...logging, pattern: process.env.DEBUG })
 
   const app = {
     config: { ...config, ...serviceConfig },
+    deps: serviceDeps,
     log,
     start() {
       app.server.listen(port, hostName, () => {

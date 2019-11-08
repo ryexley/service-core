@@ -11,11 +11,11 @@ export function expressFactory(app, routes, serviceRoutes) {
     .use(app.middleware.requestLogger)
     .use(app.middleware.responseLogger)
 
-  server.use("/", routes)
-
   serviceRoutes.forEach(({ path, router }) => {
     server.use(path, router(app))
   })
+
+  server.use("/", routes)
 
   // Post-routing middleware
   server

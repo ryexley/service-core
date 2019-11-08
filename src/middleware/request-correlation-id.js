@@ -1,5 +1,5 @@
 import { networkInterfaces } from "os"
-import uuid from "node-uuid"
+import uuid from "uuid"
 import { isNotEmpty } from "../util"
 
 let nodeId = null

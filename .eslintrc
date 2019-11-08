@@ -1,5 +1,6 @@
 {
-  "extends": "eslint",
+  "extends": ["eslint", "plugin:security/recommended"],
+  "plugins": ["security"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 10
