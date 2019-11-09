@@ -23,7 +23,7 @@ export function api({
         const { name: serviceCoreName, version: serviceCoreVersion } = packageConfig
 
         app.log.info("%s@%s", serviceCoreName, serviceCoreVersion)
-        app.log.info("%s started, listening on port %d", name, servicePort)
+        app.log.info("%s started, listening on port %d", name, PORT)
       })
     }
   }
