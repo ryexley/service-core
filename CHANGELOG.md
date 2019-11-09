@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/ryexley/service-core/compare/v0.0.4...v0.0.5) (2019-11-09)
+
+
+### Features
+
+* added support for binding to process.env.PORT when used ([67a0732](https://github.com/ryexley/service-core/commit/67a0732d393e4c3244160740eed35bb8ca0942be))
+
 ### [0.0.4](https://github.com/ryexley/service-core/compare/v0.0.2...v0.0.4) (2019-11-08)
 
 
