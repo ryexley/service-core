@@ -10,6 +10,7 @@
     "semi": ["error", "never"],
     "require-jsdoc": ["off"],
     "lines-around-comment": ["off"],
+    "no-console": ["warn"],
     "node/no-unsupported-features/es-syntax": ["off"]
   }
 }
