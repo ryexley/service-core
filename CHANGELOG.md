@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/ryexley/service-core/compare/v0.0.6...v0.0.7) (2019-11-09)
+
+
+### Bug Fixes
+
+* fixed logged port number on startup ([a326aab](https://github.com/ryexley/service-core/commit/a326aab3f526b391d0626c7a5a5dd95c33ed7587))
+
 ### [0.0.6](https://github.com/ryexley/service-core/compare/v0.0.5...v0.0.6) (2019-11-09)
 
 
