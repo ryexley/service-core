@@ -10,7 +10,7 @@ export function api({
   routes: serviceRoutes,
   deps: serviceDeps
 }) {
-  const { name, host: { port, name: hostName }, logging } = config
+  const { name, host: { port: configuredServicePort, name: hostName }, logging } = config
   const log = logFactory({ name, ...logging, pattern: process.env.DEBUG })
 
   const app = {
@@ -18,11 +18,11 @@ export function api({
     deps: serviceDeps,
     log,
     start() {
-      app.server.listen(port, hostName, () => {
+      app.server.listen(process.env.PORT || configuredServicePort, hostName, () => {
         const { name: serviceCoreName, version: serviceCoreVersion } = packageConfig
 
         app.log.info("%s@%s", serviceCoreName, serviceCoreVersion)
-        app.log.info("%s started, listening on port %d", name, port)
+        app.log.info("%s started, listening on port %d", name, configuredServicePort)
       })
     }
   }
