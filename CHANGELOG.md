@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/ryexley/service-core/compare/v0.0.7...v0.0.8) (2019-11-18)
+
+
+### Features
+
+* simplified logging factory ([8914f96](https://github.com/ryexley/service-core/commit/8914f96769e66f76077880b259a3d597e04cb15f))
+
 ### [0.0.7](https://github.com/ryexley/service-core/compare/v0.0.6...v0.0.7) (2019-11-09)
 
 
