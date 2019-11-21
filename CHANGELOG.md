@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/ryexley/service-core/compare/v0.0.8...v0.0.10) (2019-11-21)
+
+
+### Features
+
+* added service dependency initialization/configuration function ([427cb5a](https://github.com/ryexley/service-core/commit/427cb5a1501b4a38daa70a5d12c684d0a74608bb))
+
 ### [0.0.9](https://github.com/ryexley/service-core/compare/v0.0.8...v0.0.9) (2019-11-21)
 
 
