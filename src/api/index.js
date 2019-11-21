@@ -8,15 +8,14 @@ import packageConfig from "../../package.json"
 export function api({
   config: serviceConfig,
   routes: serviceRoutes,
-  deps: serviceDeps
+  configure: configureService
 }) {
   const { name, host: { port: servicePort, name: hostName }, logging } = config
   const log = logFactory({ name, ...logging, pattern: process.env.DEBUG })
   const PORT = process.env.PORT || servicePort
 
-  const app = {
+  let app = {
     config: { ...config, ...serviceConfig },
-    deps: serviceDeps,
     log,
     start() {
       app.server.listen(PORT, hostName, () => {
@@ -26,6 +25,11 @@ export function api({
         app.log.info("%s started, listening on port %d", name, PORT)
       })
     }
+  }
+
+  app = {
+    ...app,
+    ...configureService(app)
   }
 
   const routes = serverRoutes(app, serviceRoutes)
