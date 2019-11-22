@@ -1,4 +1,5 @@
 import express from "express"
+import bodyParser from "body-parser"
 import cors from "cors"
 
 export function expressFactory(app, routes, serviceRoutes) {
@@ -11,8 +12,14 @@ export function expressFactory(app, routes, serviceRoutes) {
     .use(app.middleware.requestLogger)
     .use(app.middleware.responseLogger)
 
-  serviceRoutes.forEach(({ path, router }) => {
-    server.use(path, router(app))
+  serviceRoutes.forEach(({ path, routeFactory }) => {
+    const router = routeFactory(app)
+
+    router
+      .use(bodyParser.json())
+      .use(bodyParser.urlencoded({ extended: true }))
+
+    server.use(path, router)
   })
 
   server.use("/", routes)
