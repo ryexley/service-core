@@ -12,7 +12,7 @@
     "lint:fix": "yarn run lint --fix",
     "build": "rm -rf ./dist && babel ./src --out-dir ./dist",
     "version": "standard-version --sign",
-    "prepublishOnly": "yarn run build",
+    "npm:publish": "yarn run build && yarn publish --access public",
     "serve-sample": "NODE_CONFIG_DIR=./example/config NODE_ENV=dev nodemon -L --exec babel-node ./example/src/index.js | bunyan"
   },
   "author": "",
