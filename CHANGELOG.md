@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.13](https://github.com/ryexley/service-core/compare/v0.0.11...v0.0.13) (2019-11-22)
+
+
+### Bug Fixes
+
+* fixed publish task ([06e475e](https://github.com/ryexley/service-core/commit/06e475e2862b9fe19b58ec887a9cc254955a5050))
+
 ### [0.0.12](https://github.com/ryexley/service-core/compare/v0.0.11...v0.0.12) (2019-11-22)
 
 
