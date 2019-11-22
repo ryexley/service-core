@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/ryexley/service-core/compare/v0.0.13...v0.0.15) (2019-11-22)
+
+
+### Bug Fixes
+
+* added body parsing for imported routers ([b461468](https://github.com/ryexley/service-core/commit/b46146874da180eb52a5b1e883e463b193049514))
+
 ### [0.0.14](https://github.com/ryexley/service-core/compare/v0.0.13...v0.0.14) (2019-11-22)
 
 
