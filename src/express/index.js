@@ -12,7 +12,7 @@ export function expressFactory(app, routes, serviceRoutes) {
     .use(app.middleware.requestLogger)
     .use(app.middleware.responseLogger)
 
-  serviceRoutes.forEach(({ path, routeFactory }) => {
+  serviceRoutes.forEach(({ path, router: routeFactory }) => {
     const router = routeFactory(app)
 
     router
