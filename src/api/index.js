@@ -1,4 +1,4 @@
-import config from "config"
+import { cleanEnv, str, host, port } from "envalid"
 import { logFactory } from "../setup/logging"
 import { middlewareFactory } from "../middleware"
 import { serverRoutes } from "../routes"
@@ -6,16 +6,31 @@ import { expressFactory } from "../express"
 import packageConfig from "../../package.json"
 
 export function api({
-  config: serviceConfig,
+  env: serviceEnv,
   routes: serviceRoutes,
   configure: configureService
 }) {
-  const { name, host: { port: servicePort, name: hostName }, logging } = config
-  const log = logFactory({ name, ...logging, pattern: process.env.DEBUG })
+  const env = {
+    ...cleanEnv(process.env, {
+      SERVICE_NAME: str(),
+      SERVICE_HOST: host(),
+      SERVICE_PORT: port(),
+      LOG_LEVEL: str()
+    }),
+    ...serviceEnv
+  }
+  const {
+    SERVICE_NAME: name,
+    SERVICE_HOST: hostName,
+    SERVICE_PORT: servicePort,
+    LOG_LEVEL: logLevel
+  } = env
+
+  const log = logFactory({ name, ...{ level: logLevel }, pattern: process.env.DEBUG })
   const PORT = process.env.PORT || servicePort
 
   let app = {
-    config: { ...config, ...serviceConfig },
+    env,
     log,
     start() {
       app.server.listen(PORT, hostName, () => {

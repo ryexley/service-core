@@ -1,9 +1,8 @@
-import config from "config"
 import service from "../../src"
 import { sampleRouter } from "./routes/sample-router"
 
 const serviceConfig = {
-  config,
+  env: {},
   configure() {
     // initialize app dependencies here
     // the object that is returned will

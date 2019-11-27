@@ -49,7 +49,7 @@ export function requestCorrelationIdFactory(options = {}) {
 
   function setId(req, res, reqId, next) {
     res.set(HEADER, reqId)
-    req[PROPERTY] = reqId
+    req[PROPERTY] = reqId // eslint-disable-line security/detect-object-injection
     next()
   }
 
