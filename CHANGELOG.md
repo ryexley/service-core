@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.16](https://github.com/ryexley/service-core/compare/v0.0.15...v0.0.16) (2019-11-27)
+
+
+### Features
+
+* swapped config for dotenv and envalid ([de3ca88](https://github.com/ryexley/service-core/commit/de3ca889d41890be450cfa30c43ca1e972a27fe0))
+
 ### [0.0.15](https://github.com/ryexley/service-core/compare/v0.0.13...v0.0.15) (2019-11-22)
 
 
