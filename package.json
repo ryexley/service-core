@@ -7,46 +7,46 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "server": "NODE_ENV=dev nodemon -L --exec babel-node ./src/index.js | bunyan",
+    "server": "NODE_ENV=dev nodemon -L --exec babel-node ./src/index.js",
     "lint": "eslint ./{src,example}",
     "lint:fix": "yarn run lint --fix",
     "build": "rm -rf ./dist && babel ./src --out-dir ./dist",
     "version": "standard-version --sign",
     "npm:publish": "yarn run build && npm publish --access public",
-    "serve-sample": "NODE_ENV=development nodemon -L --exec babel-node ./example/src/index.js | bunyan"
+    "serve-sample": "NODE_ENV=development nodemon -L --exec babel-node ./example/src/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.2",
-    "@babel/node": "^7.7.0",
-    "@babel/preset-env": "^7.7.1",
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
     "body-parser": "^1.19.0",
-    "bunyan": "^1.8.12",
-    "bunyan-pretty-colors": "^0.1.7",
-    "cookie-parser": "^1.4.4",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
     "dotenv": "^8.2.0",
-    "envalid": "^6.0.0",
+    "envalid": "^6.0.2",
     "express": "^4.17.1",
-    "http-status": "^1.4.0",
+    "http-status": "^1.4.2",
+    "pino": "^6.3.2",
+    "pino-pretty": "^4.0.0",
     "response-time": "^2.3.2",
-    "uuid": "^3.3.3"
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.6.0",
-    "eslint-config-eslint": "^5.0.1",
-    "eslint-plugin-node": "^10.0.0",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.3.1",
+    "eslint-config-eslint": "^6.0.0",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-security": "^1.4.0",
-    "husky": "^3.0.9",
-    "nodemon": "^1.19.4",
-    "standard-version": "^7.0.0"
+    "husky": "^4.2.5",
+    "nodemon": "^2.0.4",
+    "standard-version": "^8.0.0"
   },
   "nodemonConfig": {
     "events": {

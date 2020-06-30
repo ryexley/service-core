@@ -1,19 +1,12 @@
-import bunyan from "bunyan"
-import PrettyStream from "bunyan-pretty-colors"
+import pino from "pino"
 
 export function logFactory({ name, level = "debug" }) {
-  let prettyStdOut = null
   const prettyOutput = level.toString() === "debug"
 
-  if (prettyOutput) {
-    prettyStdOut = new PrettyStream()
-    prettyStdOut.pipe(process.stdout)
-  }
-
-  return bunyan.createLogger({
+  return pino({
     name,
     level,
-    serializers: bunyan.stdSerializers,
-    ...(prettyOutput ? { stream: prettyStdOut } : null)
+    serializers: pino.stdSerializers,
+    prettyPrint: prettyOutput
   })
 }

@@ -1,5 +1,5 @@
 import { networkInterfaces } from "os"
-import uuid from "uuid"
+import { v1 as uuid } from "uuid"
 import { isNotEmpty } from "../util"
 
 let nodeId = null
@@ -33,7 +33,7 @@ function getNodeId() {
 }
 
 function getUuid() {
-  return uuid.v1({ node: getNodeId() })
+  return uuid({ node: getNodeId() })
 }
 
 function getId(callback) {
