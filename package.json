@@ -1,6 +1,6 @@
 {
   "name": "@ryexley/service-core",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Microservice core",
   "main": "dist/index.js",
   "publishConfig": {
