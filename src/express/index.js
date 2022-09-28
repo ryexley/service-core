@@ -11,13 +11,11 @@ export function expressFactory(app, routes, serviceRoutes) {
     .use(app.middleware.requestCorrelationId)
     .use(app.middleware.requestLogger)
     .use(app.middleware.responseLogger)
+    .use(bodyParser.json())
+    .use(bodyParser.urlencoded({ extended: true }))
 
   serviceRoutes.forEach(({ path, router: routeFactory }) => {
     const router = routeFactory(app)
-
-    router
-      .use(bodyParser.json())
-      .use(bodyParser.urlencoded({ extended: true }))
 
     server.use(path, router)
   })
