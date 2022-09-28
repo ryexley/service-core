@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/ryexley/service-core/compare/v0.0.20...v0.0.21) (2022-09-28)
+
+
+### Bug Fixes
+
+* fixed express config body parser wire-up ([9fbcdc6](https://github.com/ryexley/service-core/commit/9fbcdc68ee974974c12f210aa82b09dfd54cd2d5))
+
 ### [0.0.20](https://github.com/ryexley/service-core/compare/v0.0.18...v0.0.20) (2022-09-28)
 
 ### [0.0.19](https://github.com/ryexley/service-core/compare/v0.0.18...v0.0.19) (2022-09-28)
