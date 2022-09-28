@@ -1,9 +1,9 @@
 # Bump the version
 ```
-$ yarn run version
+$ npm run version
 ```
 
 # Publish to npm
 ```
-$ yarn npm:publish
+$ npm npm:publish
 ```

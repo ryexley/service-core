@@ -8,9 +8,9 @@
   "rules": {
     "indent": ["error", 2],
     "semi": ["error", "never"],
-    "require-jsdoc": ["off"],
     "lines-around-comment": ["off"],
     "no-console": ["warn"],
+    "jsdoc/require-jsdoc": ["off"],
     "node/no-unsupported-features/es-syntax": ["off"]
   }
 }

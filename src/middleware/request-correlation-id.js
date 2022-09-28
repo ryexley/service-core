@@ -24,7 +24,7 @@ function getNodeId() {
     const { mac } = iface[0]
 
     // Protect against 00:00:00:00:00:00 mac adressess
-    if (!/^[0:]+$/.test(mac)) {
+    if (!/^[0:]+$/u.test(mac)) {
       nodeId = mac.split(":").map(b => parseInt(b, 16))
     }
   }

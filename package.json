@@ -1,52 +1,61 @@
 {
   "name": "@ryexley/service-core",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Microservice core",
   "main": "dist/index.js",
+  "author": {
+    "name": "Bob Yexley",
+    "email": "bob@yexley.net",
+    "url": "https://bob.yexley.net"
+  },
+  "license": "ISC",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
+  },
+  "engines": {
+    "node": ">=16.17.0",
+    "npm": ">=8.15.0"
   },
   "scripts": {
     "server": "NODE_ENV=dev nodemon -L --exec babel-node ./src/index.js",
     "lint": "eslint ./{src,example}",
-    "lint:fix": "yarn run lint --fix",
+    "lint:fix": "npm run lint --fix",
     "build": "rm -rf ./dist && babel ./src --out-dir ./dist",
-    "version": "standard-version --sign",
-    "npm:publish": "yarn run build && npm publish --access public",
-    "serve-sample": "NODE_ENV=development nodemon -L --exec babel-node ./example/src/index.js"
+    "version": "standard-version",
+    "npm:publish": "npm run build && npm publish --access public",
+    "serve-sample": "NODE_ENV=development nodemon -L --exec babel-node -r dotenv/config ./example/src/index.js",
+    "prepare": "husky install"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
-    "@babel/node": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.5",
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/node": "^7.19.1",
+    "@babel/preset-env": "^7.19.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "debug": "^4.1.1",
-    "dotenv": "^8.2.0",
-    "envalid": "^6.0.2",
-    "express": "^4.17.1",
-    "http-status": "^1.4.2",
-    "pino": "^6.3.2",
-    "pino-pretty": "^4.0.0",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.2",
+    "envalid": "^7.3.1",
+    "express": "^4.18.1",
+    "http-status": "^1.5.3",
+    "pino": "^8.6.1",
+    "pino-pretty": "^9.1.0",
     "response-time": "^2.3.2",
-    "uuid": "^8.2.0"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^9.0.1",
-    "@commitlint/config-conventional": "^9.0.1",
-    "commitizen": "^4.1.2",
-    "cz-conventional-changelog": "^3.2.0",
-    "eslint": "^7.3.1",
-    "eslint-config-eslint": "^6.0.0",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.24.0",
+    "eslint-config-eslint": "^7.0.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-security": "^1.4.0",
-    "husky": "^4.2.5",
-    "nodemon": "^2.0.4",
-    "standard-version": "^8.0.0"
+    "eslint-plugin-security": "^1.5.0",
+    "husky": "^8.0.1",
+    "nodemon": "^2.0.20",
+    "standard-version": "^9.5.0"
   },
   "nodemonConfig": {
     "events": {
@@ -61,7 +70,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "yarn run lint"
+      "pre-commit": "npm run lint"
     }
   }
 }
